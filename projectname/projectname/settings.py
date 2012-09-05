@@ -21,7 +21,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
+PROJECT_PATH = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 
 MEDIA_ROOT = os.path.join(PROJECT_PATH, 'media/')
 
