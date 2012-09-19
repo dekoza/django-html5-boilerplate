@@ -130,3 +130,7 @@ else:
         INSTALLED_APPS += LOCAL_INSTALLED_APPS
     except NameError:
         pass
+	try:
+		TEMPLATE_CONTEXT_PROCESSORS += LOCAL_TEMPLATE_CONTEXT_PROCESSORS
+	except:
+		pass
