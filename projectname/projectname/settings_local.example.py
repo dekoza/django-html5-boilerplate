@@ -30,9 +30,34 @@ MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'fo4#0p0o9^6t#au*5i@j)!+13nvfel2*#=@i%k)fv^1aky*^t('
+SECRET_KEY = '576f9aa6-abf0-421b-9278-bbbc291' # use uuid.uuid4 to generate this
 
 ROOT_URLCONF = PROJECT_NAME + '.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = PROJECT_NAME + '.wsgi.application'
+
+LOCAL_TEMPLATE_CONTEXT_PROCESSORS = (
+    "allauth.context_processors.allauth",
+    "allauth.account.context_processors.account",
+    'allauth.socialaccount.context_processors.socialaccount',
+    )
+
+LOCAL_INSTALLED_APPS = (
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.linkedin',
+    'allauth.socialaccount.providers.openid',
+    'allauth.socialaccount.providers.soundcloud',
+    'allauth.socialaccount.providers.twitter',
+    'uni_form',
+)
+
+
+AUTHENTICATION_BACKENDS = (
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
